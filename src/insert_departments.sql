@@ -1,0 +1,10 @@
+INSERT INTO Departments (DepartmentName) VALUES ('Mathematics');
+INSERT INTO Departments (DepartmentName) VALUES ('Life Sciences');
+INSERT INTO Departments (DepartmentName) VALUES ('Physical Sciences');
+INSERT INTO Departments (DepartmentName) VALUES ('CTE');
+INSERT INTO Departments (DepartmentName) VALUES ('English');
+INSERT INTO Departments (DepartmentName) VALUES ('Health and PE');
+INSERT INTO Departments (DepartmentName) VALUES ('Visual and Performing Arts');
+INSERT INTO Departments (DepartmentName) VALUES ('LOTE');
+INSERT INTO Departments (DepartmentName) VALUES ('Social Studies');
+INSERT INTO Departments (DepartmentName) VALUES ('Student Leadership');
