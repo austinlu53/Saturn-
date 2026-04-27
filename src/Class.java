@@ -8,4 +8,9 @@ public class Class {
         this.period = period;
         this.roomID = roomID;
     }
+
+    @Override
+    public String toString() {
+        return "INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES (" + courseID + "," + period + "," + roomID + ");";
+    }
 }
