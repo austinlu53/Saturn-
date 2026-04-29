@@ -18,7 +18,7 @@ public class Teacher {
         teacherID = teacherIDCounter;
     }
     public String toString() {
-        return "INSERT INTO Teachers (FirstName, LastName, DepartmentID) VALUES (\"" + firstName + "\", \"" + lastName + "\", " + departmentID + ");";
+        return "INSERT INTO Teachers (TeacherFirstName, TeacherLastName, DepartmentID) VALUES (\"" + firstName + "\", \"" + lastName + "\", " + departmentID + ");";
     }
     public static ArrayList<Teacher> generateTeachers()  {
         ArrayList<Teacher> teachers = new ArrayList<>();
