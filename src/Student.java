@@ -1,3 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Student {
     private String student_firstname;
     private String student_lastname;
@@ -10,5 +16,19 @@ public class Student {
     public String toString() {
         return ("INSERT INTO Students (StudentFirstName,StudentLastName) " +
                 "VALUES ("+"'"+student_firstname+"'"+","+"'"+student_lastname+"'"+");");
+    }
+    public static ArrayList<Student> generateStudents() {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            Scanner s = new Scanner(new File("src/students.txt"));
+            while (s.hasNextLine()) {
+                String[] line = s.nextLine().split(" ");
+                students.add(new Student(line[0],line[1]));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Incorrect file path!");
+        }
+        for (Student student : students) System.out.println(student);
+        return students;
     }
 }
