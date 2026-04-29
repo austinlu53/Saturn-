@@ -20,15 +20,20 @@ public class Teacher {
     public String toString() {
         return "INSERT INTO Teachers (FirstName, LastName, DepartmentID) VALUES (\"" + firstName + "\", \"" + lastName + "\", " + departmentID + ");";
     }
-    public static ArrayList<Teacher> generateTeachers() throws FileNotFoundException {
+    public static ArrayList<Teacher> generateTeachers()  {
         ArrayList<Teacher> teachers = new ArrayList<>();
+        try {
         Scanner s = new Scanner(new File("src/faculty.csv"));
-        int dept = 0;
-        while (s.hasNextLine()) {
-            String line = s.nextLine();
-            if (Character.isDigit(line.charAt(0))) dept++;
-            else teachers.add(new Teacher(line,dept));
+            int dept = 0;
+            while (s.hasNextLine()) {
+                String line = s.nextLine();
+                if (Character.isDigit(line.charAt(0))) dept++;
+                else teachers.add(new Teacher(line,dept));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Incorrect file path!");
         }
+        for (Teacher teacher : teachers) System.out.println(teacher);
         return teachers;
     }
 }
