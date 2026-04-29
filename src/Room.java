@@ -28,6 +28,7 @@ public class Room {
                 }
             }
         }
+        for (Room room : rooms) System.out.println(room);
         return rooms;
     }
 }
