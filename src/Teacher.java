@@ -33,7 +33,6 @@ public class Teacher {
         } catch (FileNotFoundException e) {
             System.out.println("Incorrect file path!");
         }
-        for (Teacher teacher : teachers) System.out.println(teacher);
         return teachers;
     }
 }

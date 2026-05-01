@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Class {
     private int courseID;
     private int period;
@@ -12,5 +17,34 @@ public class Class {
     @Override
     public String toString() {
         return "INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES (" + courseID + "," + period + "," + roomID + ");";
+    }
+    public static ArrayList<Class> generateClasses() {
+        ArrayList<Class> classList = new ArrayList<>();
+        boolean[][] classes = new boolean[720][10];
+        int count = 0;
+        try {
+            File myFile = new File("src/CourseID");
+            Scanner reader = new Scanner(myFile);
+            while (reader.hasNextLine()) {
+                int data = reader.nextInt();
+                for (int i = 0; i < (int) (Math.random() * 5) + 1; i++) {
+                    int ClassID = (int) (Math.random()*720) + 1;
+                    int PeriodNum = (int) (Math.random()*10) + 1;
+                    while (classes[ClassID - 1][PeriodNum - 1]) {
+                        ClassID = (int) (Math.random()*720) + 1;
+                        PeriodNum = (int) (Math.random()*10) + 1;
+                    }
+                    classList.add(new Class(data,PeriodNum,ClassID));
+                    count++;
+                    classes[ClassID - 1][PeriodNum - 1] = true;
+                }
+
+            }
+            reader.close();
+            System.out.println(count);
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
+        return classList;
     }
 }
