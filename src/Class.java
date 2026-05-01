@@ -28,16 +28,18 @@ public class Class {
         boolean[][] classes = new boolean[720][10];
         int count = 0;
         try {
-            File myFile = new File("src/CourseID");
+            File myFile = new File(
+                    "src/CourseID");
             Scanner reader = new Scanner(myFile);
             while (reader.hasNextLine()) {
                 int data = reader.nextInt();
-                for (int i = 0; i < (int) (Math.random() * 5) + 1; i++) {
+                int b = (data%2==0)? 0 : 5;
+                for (int i = 1+b; i <= 5+b; i++) {
                     int ClassID = (int) (Math.random()*720) + 1;
-                    int PeriodNum = (int) (Math.random()*10) + 1;
+                    int PeriodNum = i;
                     while (classes[ClassID - 1][PeriodNum - 1]) {
                         ClassID = (int) (Math.random()*720) + 1;
-                        PeriodNum = (int) (Math.random()*10) + 1;
+                        PeriodNum = i;
                     }
                     classList.add(new Class(data,PeriodNum,ClassID));
                     count++;
@@ -55,5 +57,13 @@ public class Class {
 
     public int getClassID() {
         return classID;
+    }
+
+    public int getPeriod() {
+        return period;
+    }
+
+    public int getCourseID() {
+        return courseID;
     }
 }
