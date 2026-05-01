@@ -9,6 +9,8 @@ public class Teacher {
     private String lastName;
     private int departmentID;
     public int teacherID;
+    private static ArrayList<Teacher> teacherList;
+
     public Teacher(String name, int departmentID) {
         String[] n = name.split(",");
         lastName = n[0];
@@ -17,10 +19,12 @@ public class Teacher {
         teacherIDCounter++;
         teacherID = teacherIDCounter;
     }
+
     public String toString() {
         return "INSERT INTO Teachers (TeacherFirstName, TeacherLastName, DepartmentID) VALUES (\"" + firstName + "\", \"" + lastName + "\", " + departmentID + ");";
     }
-    public static ArrayList<Teacher> generateTeachers()  {
+
+    public static void generateTeachers()  {
         ArrayList<Teacher> teachers = new ArrayList<>();
         try {
         Scanner s = new Scanner(new File("src/faculty.csv"));
@@ -33,7 +37,7 @@ public class Teacher {
         } catch (FileNotFoundException e) {
             System.out.println("Incorrect file path!");
         }
-        return teachers;
+        teacherList = teachers;
     }
 
     public static void main(String[] args) {

@@ -9,6 +9,7 @@ public class Class {
     private int roomID;
     private int classID = 0;
     private static int classIDtrack = 0;
+    private static ArrayList<Class> classesList;
 
     public Class(int courseID, int period, int roomID) {
         this.courseID = courseID;
@@ -22,7 +23,7 @@ public class Class {
     public String toString() {
         return "INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES (" + courseID + "," + period + "," + roomID + ");";
     }
-    public static ArrayList<Class> generateClasses() {
+    public static void generateClasses() {
         ArrayList<Class> classList = new ArrayList<>();
         boolean[][] classes = new boolean[720][10];
         int count = 0;
@@ -49,7 +50,7 @@ public class Class {
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
-        return classList;
+        classesList = classList;
     }
 
     public int getClassID() {
