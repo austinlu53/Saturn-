@@ -13,4 +13,16 @@ public class Class {
     public String toString() {
         return "INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES (" + courseID + "," + period + "," + roomID + ");";
     }
+
+    public int getCourseID() {
+        return courseID;
+    }
+
+    public int getPeriod() {
+        return period;
+    }
+
+    public int getRoomID() {
+        return roomID;
+    }
 }
