@@ -11,6 +11,10 @@ public class Student {
     public Student(String student_firstname,String student_lastname){
         this.student_firstname = student_firstname;
         this.student_lastname = student_lastname;
+
+        for (int i = 0; i < 10; i++) {
+            new StudentGenerator();
+        }
     }
 
     public String toString() {

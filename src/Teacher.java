@@ -35,4 +35,8 @@ public class Teacher {
         }
         return teachers;
     }
+
+    public static void main(String[] args) {
+        generateTeachers();
+    }
 }
