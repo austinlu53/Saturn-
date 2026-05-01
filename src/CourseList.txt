@@ -1,0 +1,188 @@
+Algebra I,Regents
+Geometry,Regents
+Algebra II,Regents
+Precalculus,Regents 
+AP Calc AB,AP
+AP Calc BC,AP
+Linear Algebra,Elective
+Multivariable Calculus,Elective
+AP Stats,AP
+Junior Math Analysis,Elective
+Intermediate Math Analysis,Elective
+Senior Math Team,Elective
+Number Theory,Elective
+Graph Theory,Elective
+Intro to Math Research,Elective
+Living Environment,Regents
+AP Bio,AP
+Living Environment Lab,Regents
+Genetics,Elective
+AP Psych,AP
+Bioorganic Chemistry,Elective
+APES,AP
+Intro to Neuro,Elective
+Human Anatomy,Elective
+Environmental Sustainability,Elective
+Chemistry,Regents
+AP Chem,AP
+Chem Lab,Regents
+Forensics,Elective
+Weston,Elective
+Organic Chemistry Pharmacy Seminar,Elective
+Physics Lab,Regents
+Physics,Regents
+AP Physics 1,AP
+AP Physics 2,AP
+AP Physics C Mech,AP
+AP Physics C E&M,AP
+Modern Physics,Elective
+Astronomy,Elective
+Quantitative Analysis,Elective
+Organic Chem,Elective
+Biochemistry,Elective
+MICA,Elective
+AP CSP,AP
+AP CSA,AP
+IT Infrastructure & Big Data,Elective
+Mobile App Development,Elective
+Cybersecurity,Elective
+Digital Electronics,Elective
+Robotics Engineering I,Elective
+Robotics Engineering II,Elective
+PLTW CIM,Elective
+PLTW CEA,Elective
+Mechatronics,Elective
+PLTW PoE,Elective
+Flight School,Elective
+Aerospace Engineering,Elective
+Digital Design,Elective
+Building Materials and Fabrication,Elective
+Architectural Design & Modeling,Elective
+Engineering Statics,Elective
+AutoCAD Certification,Elective
+American Concrete Institute Certification,Elective
+Surveying Certification,Elective   
+Analog Electronics,Elective
+DSD,Elective
+English 9,Regents
+English 10,Regents
+English 11,Regents
+AP Capstone Seminar,AP
+AP Lang,AP
+AP Lit,AP
+AP Capstone Research,AP
+Yearbook,Elective
+Creative Writing,Elective
+Drama,Elective
+Film and Lit,Elective
+Graphic Novels,Elective
+Journalism,Elective
+LLD,Elective
+MHS,Elective
+Sci-Fi,Elective
+Journalism,Elective
+Health,Regents
+PE,Regents
+Advanced Weight Training,Elective
+Backyard Games,Elective
+Badminton and Pickleball,Elective
+Basketball,Elective
+Capoeira,Elective
+Dance,Elective
+Golf,Elective
+Lacrosse,Elective
+Soccer and Team Handball,Elective
+Salsa I,Elective
+Salsa II,Elective
+Spin,Elective
+Swimming,Elective
+Volleyball,Elective
+Weight Training,Elective
+Yoga,Elective
+DDP,Regents
+AP Music Theory,AP
+Set Design,Elective
+Basic Strings,Elective
+Concert Band,Elective
+Concert Choir,Elective
+Intermediate Orchestra,Elective
+Jazz Band,Elective
+Junior Band,Elective
+Orchestra,Elective
+String Orchestra,Elective
+Symphonic Band,Elective
+Treble Choir,Elective
+Tech Chorale,Elective
+Spring Musical,Elective
+Stageworks,Elective
+Fundamentals of Product Design,Elective
+Methods of Fabrication,Elective
+Advanced Modelling,Elective
+Adobe Visual Design,Elective
+Studio Art,Elective
+AP Studio Art,Elective
+Digital Animation,Elective
+Video Game Design,Elective
+Adobe Digital Video,Elective
+Architectural Drawing,Elective
+Inventor Certification,Elective
+Spanish I,Regents
+Spanish II,Regents
+Spanish III,Regents
+Spanish IV,Regents
+AP Spanish Lang,AP
+AP Spanish Lit,AP
+Italian I,Regents
+Italian II,Regents
+Italian III,Regents
+AP Italian,AP
+German I,Regents
+German II,Regents
+German III,Regents
+AP German,AP
+French I,Regents
+French II,Regents
+French III,Regents
+AP French,AP
+Mandarin I,Regents
+Mandarin II,Regents
+Mandarin III,Regents
+Mandarin IV,Regents
+AP Chinese,AP
+Pre-AP World,Regents
+Global Studies,Regents
+AP World,AP
+AP Euro,AP
+United States History,Regents
+APUSH,AP
+AP Macro,AP
+AP Micro,AP
+AP African American Studies,AP
+AP Art History,AP
+AP Business Principles,AP
+AP Gov,AP
+AP Comp Gov,AP
+APHUG,AP
+Economics,Regents
+Participation in Government,Regents
+Physical Anthropology,Elective
+Cultural Anthropology,Elective
+Dollars and Sense,Elective
+Social Science Research,Elective
+Sociology,Elective
+Crim Law,Elective
+Crim Pro,Elective
+Civil Law,Elective
+Constitutional Law I,Elective
+Constitutional Law II,Elective
+Legal Research,Elective
+Principles of Accounting,Elective
+Finance and Investments,Elective
+Intro to Business Law,Elective
+Virtual Enterprise,Elective
+Financial Literacy,Elective
+Civics,Elective
+Freshman Student Leadership,Elective
+Sophomore Student Leadership,Elective
+Junior Student Leadership,Elective
+Senior Student Leadership,Elective
