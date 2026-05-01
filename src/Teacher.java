@@ -36,4 +36,8 @@ public class Teacher {
         for (Teacher teacher : teachers) System.out.println(teacher);
         return teachers;
     }
+
+    public static void main(String[] args) {
+        generateTeachers();
+    }
 }

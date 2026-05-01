@@ -13,7 +13,7 @@ public class Student {
         this.student_lastname = student_lastname;
 
         for (int i = 0; i < 10; i++) {
-            new StudentGenerator()
+            new StudentGenerator();
         }
     }
 
