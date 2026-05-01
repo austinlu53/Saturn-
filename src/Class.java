@@ -7,11 +7,15 @@ public class Class {
     private int courseID;
     private int period;
     private int roomID;
+    private int classID = 0;
+    private static int classIDtrack = 0;
 
     public Class(int courseID, int period, int roomID) {
         this.courseID = courseID;
         this.period = period;
         this.roomID = roomID;
+        classIDtrack++;
+        classID = classIDtrack;
     }
 
     @Override
@@ -46,5 +50,9 @@ public class Class {
             System.out.println(e);
         }
         return classList;
+    }
+
+    public int getClassID() {
+        return classID;
     }
 }
