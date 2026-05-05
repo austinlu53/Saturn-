@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class StudentScheduleGen {
     public static void main(String[] args) {
-        ArrayList<Class> classes = Class.generateClasses();
+        ArrayList<Class> classes = Class.getClassesList();
         for (Class c : classes) System.out.println(c);
         /*
         ArrayList<Student> students = Student.generateStudents();

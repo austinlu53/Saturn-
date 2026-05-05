@@ -46,7 +46,6 @@ public class Class {
 
             }
             reader.close();
-            System.out.println(count);
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
