@@ -56,4 +56,8 @@ public class Class {
     public int getClassID() {
         return classID;
     }
+
+    public static ArrayList<Class> getClassesList() {
+        return classesList;
+    }
 }
