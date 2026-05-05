@@ -12,8 +12,7 @@ public class TeacherScheduleGen {
                         randomTeacher = (int) (Math.random() * 322) + 1;
                     }
                     usedTeachers.add(randomTeacher);
-                    System.out.print(new TeacherClasses(randomTeacher, i));
-                    System.out.println("Period: " + j);
+                    System.out.println(new TeacherClasses(randomTeacher, i));
                 }
             }
             usedTeachers.clear();
