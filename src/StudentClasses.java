@@ -10,4 +10,12 @@ public class StudentClasses {
     public String toString() {
         return "INSERT INTO StudentClasses (StudentID,ClassID) VALUES (" + studentID + "," + classID + ");";
     }
+
+    public int getClassID() {
+        return classID;
+    }
+
+    public int getStudentID() {
+        return studentID;
+    }
 }

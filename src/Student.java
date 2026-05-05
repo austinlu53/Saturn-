@@ -7,11 +7,15 @@ import java.util.Scanner;
 public class Student {
     private String student_firstname;
     private String student_lastname;
+    private static int StudentIDCounter = 0;
+    private int StudentID;
+    public static ArrayList<Student> students = generateStudents();
 
     public Student(String student_firstname,String student_lastname){
         this.student_firstname = student_firstname;
         this.student_lastname = student_lastname;
-
+        StudentIDCounter++;
+        StudentID=StudentIDCounter;
         for (int i = 0; i < 10; i++) {
             new StudentGenerator();
         }
@@ -33,5 +37,9 @@ public class Student {
             System.out.println("Incorrect file path!");
         }
         return students;
+    }
+
+    public int getStudentID() {
+        return StudentID;
     }
 }
