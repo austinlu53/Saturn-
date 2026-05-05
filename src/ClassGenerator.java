@@ -18,7 +18,7 @@ public class ClassGenerator {
                         ClassID = (int) (Math.random()*720) + 1;
                         PeriodNum = (int) (Math.random()*10) + 1;
                     }
-                    System.out.println(new Class(data,PeriodNum,ClassID));
+                    System.out.println(new ClassA(data,PeriodNum,ClassID));
                     count++;
                     classes[ClassID - 1][PeriodNum - 1] = true;
                 }
