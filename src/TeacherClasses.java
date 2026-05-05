@@ -14,4 +14,10 @@ public class TeacherClasses {
     public int getTeacherID() {
         return teacherID;
     }
+
+    @Override
+    public String toString() {
+        return "INSERT INTO TeacherClasses (TeacherID,ClassID) VALUES (" + teacherID + "," + classID
+ + ");";
+    }
 }

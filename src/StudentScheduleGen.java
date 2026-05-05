@@ -5,7 +5,6 @@ public class StudentScheduleGen {
     public static void main(String[] args) {
         ArrayList<Class> classes = Class.getClassesList();
         for (Class c : classes) System.out.println(c);
-        /*
         ArrayList<Student> students = Student.generateStudents();
         ArrayList<StudentClasses> studentClasses = new ArrayList<>();
         for (Student student : students) {
@@ -26,6 +25,5 @@ public class StudentScheduleGen {
         }
         System.out.println(Arrays.toString(i));
         System.out.println(Arrays.toString(j));
-         */
     }
 }

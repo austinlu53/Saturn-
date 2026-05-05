@@ -59,4 +59,8 @@ public class Class {
     public static ArrayList<Class> getClassesList() {
         return classesList;
     }
+
+    public int getPeriod() {
+        return period;
+    }
 }
