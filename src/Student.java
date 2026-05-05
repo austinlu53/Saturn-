@@ -5,17 +5,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Student {
-    private String student_firstname;
-    private String student_lastname;
-    private static int StudentIDCounter = 0;
-    private int StudentID;
+    private String firstName;
+    private String lastName;
+    private static int studentIDCounter = 0;
+    private int studentID;
     public static ArrayList<Student> students = generateStudents();
 
-    public Student(String student_firstname,String student_lastname){
-        this.student_firstname = student_firstname;
-        this.student_lastname = student_lastname;
-        StudentIDCounter++;
-        StudentID=StudentIDCounter;
+    public Student(String firstName,String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        studentIDCounter++;
+        studentID=studentIDCounter;
         for (int i = 0; i < 10; i++) {
             new StudentGenerator();
         }
@@ -23,7 +23,7 @@ public class Student {
 
     public String toString() {
         return ("INSERT INTO Students (StudentFirstName,StudentLastName) " +
-                "VALUES ("+"'"+student_firstname+"'"+","+"'"+student_lastname+"'"+");");
+                "VALUES (\""+firstName+"\",\""+lastName+"\");");
     }
     public static ArrayList<Student> generateStudents() {
         ArrayList<Student> students = new ArrayList<>();
@@ -40,6 +40,6 @@ public class Student {
     }
 
     public int getStudentID() {
-        return StudentID;
+        return studentID;
     }
 }
