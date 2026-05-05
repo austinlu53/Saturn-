@@ -27,7 +27,7 @@ public class Teacher {
     public static void generateTeachers()  {
         ArrayList<Teacher> teachers = new ArrayList<>();
         try {
-        Scanner s = new Scanner(new File("src/faculty.csv"));
+        Scanner s = new Scanner(new File("src/teachers.csv"));
             int dept = 0;
             while (s.hasNextLine()) {
                 String line = s.nextLine();

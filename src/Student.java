@@ -11,6 +11,7 @@ public class Student {
     private int studentID;
     public static ArrayList<Student> students = generateStudents();
 
+
     public Student(String firstName,String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,10 +29,10 @@ public class Student {
     public static ArrayList<Student> generateStudents() {
         ArrayList<Student> students = new ArrayList<>();
         try {
-            Scanner s = new Scanner(new File("src/students.txt"));
+            Scanner s = new Scanner(new File("src/students.csv"));
             while (s.hasNextLine()) {
-                String[] line = s.nextLine().split(" ");
-                students.add(new Student(line[0],line[1]));
+                String[] line = s.nextLine().split(",");
+                students.add(new Student(line[1],line[0]));
             }
         } catch (FileNotFoundException e) {
             System.out.println("Incorrect file path!");
