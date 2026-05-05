@@ -4,5 +4,6 @@ import java.util.Scanner;
 
 public class StudentGenerator {
     public static void main(String[] args) {
+
     }
 }
