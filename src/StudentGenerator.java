@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StudentGenerator {
     public static void main(String[] args) {
- vx vd        try {
+        try {
             File StudentFile = new File("src/students.txt");
             Scanner scan = new Scanner(StudentFile);
             while(scan.hasNextLine()){
