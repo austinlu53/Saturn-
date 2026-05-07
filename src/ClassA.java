@@ -8,7 +8,7 @@ public class ClassA {
     private int period;
     private int roomID;
     private int classID = 0;
-    private static int classIDtrack = 0;
+    private static int classIDCounter = 0;
     private static ArrayList<ClassA> classesList;
     public static boolean generated = false;
 
@@ -16,8 +16,8 @@ public class ClassA {
         this.courseID = courseID;
         this.period = period;
         this.roomID = roomID;
-        classIDtrack++;
-        classID = classIDtrack;
+        classIDCounter++;
+        classID = classIDCounter;
     }
 
     @Override
