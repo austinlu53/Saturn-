@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class TeacherScheduleGen {
-    public static void generateSchedules() {
+    public static ArrayList<TeacherClasses> generateSchedules() {
+        ArrayList<TeacherClasses> output = new ArrayList<>();
         ClassA.generateClasses();
         ArrayList<Integer> usedTeachers = new ArrayList<>();
         for (int j = 1; j <= 10; j++) {
@@ -12,10 +13,13 @@ public class TeacherScheduleGen {
                         randomTeacher = (int) (Math.random() * 322) + 1;
                     }
                     usedTeachers.add(randomTeacher);
-                    System.out.println(new TeacherClasses(randomTeacher, i));
+                    TeacherClasses add = new TeacherClasses(randomTeacher, i);
+                    System.out.println(add);
+                    output.add(add);
                 }
             }
             usedTeachers.clear();
         }
+        return output;
     }
 }
