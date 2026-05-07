@@ -52,5 +52,7 @@ public class Assignment {
         return classID;
     }
 
-
+    public static ArrayList<Assignment> getAssignments() {
+        return assignments;
+    }
 }
