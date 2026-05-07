@@ -43,4 +43,14 @@ public class Assignment {
     public String toString() {
         return "INSERT INTO Assignments (ClassID, AssignmentName, AssignmentType) VALUES (" + classID + ", \"" + name + "\", \"" + type + "\");";
     }
+
+    public int getAssignmentID() {
+        return assignmentID;
+    }
+
+    public int getClassID() {
+        return classID;
+    }
+
+
 }

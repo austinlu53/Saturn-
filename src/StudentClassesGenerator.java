@@ -1,13 +1,16 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.Class;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.BufferedReader;
 
 public class StudentClassesGenerator {
-    public static void main(String[] args) {
+    public static ArrayList<StudentClasses> generateSchedules() {
+        ArrayList<StudentClasses> output = new ArrayList<>();
+
         ArrayList<ArrayList> Periods = new ArrayList<>();
         ArrayList<Integer> Period1 = new ArrayList<>();
         ArrayList<Integer> Period2 = new ArrayList<>();
@@ -85,9 +88,10 @@ public class StudentClassesGenerator {
                 int randomIdx = (int) (Math.random()*(Periods.get(k).size()));
                 int randomClassID = (int) Periods.get(k).get(randomIdx);
                 StudentClasses Student = new StudentClasses(j,randomClassID);
+                output.add(Student);
                 System.out.println(Student);
             }
         }
-
+        return output;
     }
 }
