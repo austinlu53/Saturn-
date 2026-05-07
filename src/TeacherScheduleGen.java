@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class TeacherScheduleGen {
-    public static void main(String[] args) {
+    public static void generateSchedules() {
         ClassA.generateClasses();
         ArrayList<Integer> usedTeachers = new ArrayList<>();
         for (int j = 1; j <= 10; j++) {
