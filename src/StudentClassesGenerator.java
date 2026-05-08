@@ -73,7 +73,7 @@ public class StudentClassesGenerator {
                 Periods.get(9).add(classes.get(i).getClassID());
             }
         }
-        System.out.println("Period1: " + Period1);
+         /* System.out.println("Period1: " + Period1);
         System.out.println("Period2: " + Period2);
         System.out.println("Period3: " + Period3);
         System.out.println("Period4: " + Period4);
@@ -82,14 +82,14 @@ public class StudentClassesGenerator {
         System.out.println("Period7: " + Period7);
         System.out.println("Period8: " + Period8);
         System.out.println("Period9: " + Period9);
-        System.out.println("Period10: " + Period10);
+        System.out.println("Period10: " + Period10); */
         for(int j = 1;j<=5000;j++){
             for(int k = 0;k<=9;k++){
                 int randomIdx = (int) (Math.random()*(Periods.get(k).size()));
                 int randomClassID = (int) Periods.get(k).get(randomIdx);
                 StudentClasses Student = new StudentClasses(j,randomClassID);
                 output.add(Student);
-                System.out.println(Student);
+                // System.out.println(Student);
             }
         }
         return output;
