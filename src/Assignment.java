@@ -16,18 +16,6 @@ public class Assignment {
         }
     }
 
-    public static ArrayList<Integer> getAssignmentsByClass(int classID) {
-        if (assignments == null) {
-            generateAssignments();
-        }
-        ArrayList<Integer> out = new ArrayList<>();
-        for (int i = 0; i < assignments.size(); i++) {
-           if (assignments.get(i).getClassID() == classID) {
-               out.add(assignments.get(i).getAssignmentID());
-           }
-        }
-        return out;
-    }
     public Assignment(int classID, String name, String type) {
         this.classID = classID;
         this.name = name;
