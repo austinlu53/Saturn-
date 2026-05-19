@@ -5,6 +5,8 @@ public class fullGen {
         ArrayList<TeacherClasses> teacherSchedule = TeacherScheduleGen.generateSchedules();
         System.out.println(" ");
         ArrayList<StudentClasses> studentSchedule = StudentClassesGenerator.generateSchedules();
+        System.out.println(teacherSchedule);
+        System.out.println(studentSchedule);
 
 
     }

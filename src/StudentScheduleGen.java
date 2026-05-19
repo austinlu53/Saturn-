@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudentScheduleGen {
-    public static void main(String[] args) {
-        ClassA.generateClasses();
+    public static ArrayList<StudentClasses> returnSchedules() {
+        // ClassA.generateClasses();
         ArrayList<ClassA> classes = ClassA.getClassesList();
         // for (ClassA c : classes) { System.out.println(c);};
         ArrayList<Student> students = Student.getStudents();
@@ -25,8 +25,12 @@ public class StudentScheduleGen {
             i[s.getClassID()-1]++;
             j[s.getStudentID()-1]++;
         }
+
+        return studentClasses;
         // System.out.println(Arrays.toString(i));
         // System.out.println(Arrays.toString(j));
+
+        /*
         System.out.print("INSERT INTO StudentClasses (StudentID,ClassID) VALUES ");
         for (int n = 0; n < studentClasses.size(); n++) {
             StudentClasses s = studentClasses.get(n);
@@ -36,5 +40,6 @@ public class StudentScheduleGen {
             }
         }
         System.out.print(";");
+         */
     }
 }

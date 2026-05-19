@@ -26,30 +26,33 @@ public class Assignment {
 
     public static ArrayList<Integer> getAssignmentsByClass(int id) {
         if (!generated) {
-            generateAssignments();
-            generated = true;
+            // generateAssignments();
+            // generated = true;
         }
         ArrayList<Integer> out = new ArrayList<>();
         for (Assignment assignment : assignments) {
             if (assignment.getClassID() == id) {
-                out.add(assignment.getClassID());
+                out.add(assignment.getAssignmentID());
             }
         }
         return out;
     }
 
     public static void generateAssignments() {
-        ClassA.generateClasses();
-        ArrayList<ClassA> classList = ClassA.getClassesList();
-        assignments = new ArrayList<>();
-        for (ClassA c : classList) {
-            int cid = c.getClassID();
-            for (int i = 1; i <= 12; i++) {
-                assignments.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
+        if (!generated) {
+            ClassA.generateClasses();
+            ArrayList<ClassA> classList = ClassA.getClassesList();
+            assignments = new ArrayList<>();
+            for (ClassA c : classList) {
+                int cid = c.getClassID();
+                for (int i = 1; i <= 12; i++) {
+                    assignments.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
+                }
+                for (int i = 1; i <= 3; i++) {
+                    assignments.add(new Assignment(cid,"Major Assessment " + i, "Major Assessment"));
+                }
             }
-            for (int i = 1; i <= 3; i++) {
-                assignments.add(new Assignment(cid,"Major Assessment " + i, "Major Assessment"));
-            }
+            generated = true;
         }
     }
     @Override
