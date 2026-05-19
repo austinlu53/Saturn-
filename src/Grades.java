@@ -6,7 +6,7 @@ public class Grades {
     public Grades(int studentID, int assignmentID) {
         this.studentID = studentID;
         this.assignmentID = assignmentID;
-        grade = (int) (Math.random() * 75) + 1;
+        grade = (int) (Math.random() * 26) + 75;
     }
 
     public String toString() {
