@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClassA {
+    private static int classIDCounter = 0;
+    private static boolean generated = false;
+    private static ArrayList<ClassA> classes;
     private int courseID;
     private int period;
     private int roomID;
-    private int classID = 0;
-    private static int classIDCounter = 0;
-    private static ArrayList<ClassA> classesList;
-    public static boolean generated = false;
+    private int classID;
 
     public ClassA(int courseID, int period, int roomID) {
         this.courseID = courseID;
@@ -28,7 +28,6 @@ public class ClassA {
         if (!generated) {
             ArrayList<ClassA> classList = new ArrayList<>();
             boolean[][] classes = new boolean[720][10];
-            int count = 0;
             try {
                 File myFile = new File("src/CourseID");
                 Scanner reader = new Scanner(myFile);
@@ -42,7 +41,6 @@ public class ClassA {
                             PeriodNum = (int) (Math.random()*10) + 1;
                         }
                         classList.add(new ClassA(data,PeriodNum,ClassID));
-                        count++;
                         classes[ClassID - 1][PeriodNum - 1] = true;
                     }
 
@@ -51,16 +49,17 @@ public class ClassA {
             } catch (FileNotFoundException e) {
                 System.out.println(e);
             }
-            classesList = classList;
+            ClassA.classes = classList;
+            generated = true;
         }
+    }
+
+    public static ArrayList<ClassA> getClasses() {
+        return classes;
     }
 
     public int getClassID() {
         return classID;
-    }
-
-    public static ArrayList<ClassA> getClassesList() {
-        return classesList;
     }
 
     public int getPeriod() {

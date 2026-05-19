@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Teacher {
-    private static int teacherIDCounter;
+    private static int teacherIDCounter = 0;
     private String firstName;
     private String lastName;
     private int departmentID;
     public int teacherID;
-    private static ArrayList<Teacher> teacherList;
+    private static ArrayList<Teacher> teachers;
 
     public Teacher(String name, int departmentID) {
         String[] n = name.split(",");
@@ -25,7 +25,7 @@ public class Teacher {
     }
 
     public static void generateTeachers()  {
-        ArrayList<Teacher> teachers = new ArrayList<>();
+        teachers = new ArrayList<>();
         try {
         Scanner s = new Scanner(new File("src/teachers.csv"));
             int dept = 0;
@@ -37,10 +37,9 @@ public class Teacher {
         } catch (FileNotFoundException e) {
             System.out.println("Incorrect file path!");
         }
-        teacherList = teachers;
     }
 
-    public static void main(String[] args) {
-        generateTeachers();
+    public static ArrayList<Teacher> getTeachers() {
+        return teachers;
     }
 }

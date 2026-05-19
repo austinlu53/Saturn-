@@ -1,20 +1,13 @@
 import java.util.ArrayList;
 
 public class Assignment {
+    private static ArrayList<Assignment> assignments;
+    private static boolean generated = false;
     private static int assignmentIDCounter = 0;
     private int assignmentID;
     private int classID;
     private String name;
     private String type;
-    private static ArrayList<Assignment> assignments;
-    private static boolean generated = false;
-
-    public static void main(String[] args) {
-        generateAssignments();
-        for (Assignment a : assignments) {
-            System.out.println(a);
-        }
-    }
 
     public Assignment(int classID, String name, String type) {
         this.classID = classID;
@@ -25,12 +18,8 @@ public class Assignment {
     }
 
     public static ArrayList<Integer> getAssignmentsByClass(int id) {
-        if (!generated) {
-            // generateAssignments();
-            // generated = true;
-        }
         ArrayList<Integer> out = new ArrayList<>();
-        for (Assignment assignment : assignments) {
+    for (Assignment assignment : assignments) {
             if (assignment.getClassID() == id) {
                 out.add(assignment.getAssignmentID());
             }
@@ -41,7 +30,7 @@ public class Assignment {
     public static void generateAssignments() {
         if (!generated) {
             ClassA.generateClasses();
-            ArrayList<ClassA> classList = ClassA.getClassesList();
+            ArrayList<ClassA> classList = ClassA.getClasses();
             assignments = new ArrayList<>();
             for (ClassA c : classList) {
                 int cid = c.getClassID();
@@ -66,12 +55,5 @@ public class Assignment {
 
     public int getClassID() {
         return classID;
-    }
-
-    public static ArrayList<Assignment> getAssignments() {
-        if (assignments == null) {
-            generateAssignments();
-        }
-        return assignments;
     }
 }

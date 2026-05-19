@@ -1,25 +1,21 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Student {
+    private static int studentIDCounter = 0;
+    private static ArrayList<Student> students;
     private String firstName;
     private String lastName;
-    private static int studentIDCounter = 0;
     private int studentID;
-    public static ArrayList<Student> students = generateStudents();
 
 
-    public Student(String firstName,String lastName){
+    public Student(String firstName,String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         studentIDCounter++;
-        studentID=studentIDCounter;
-        for (int i = 0; i < 10; i++) {
-            new StudentGenerator();
-        }
+        studentID= studentIDCounter;
     }
 
     public String toString() {
@@ -27,7 +23,7 @@ public class Student {
                 "VALUES (\""+firstName+"\",\""+lastName+"\");");
     }
     public static ArrayList<Student> generateStudents() {
-        ArrayList<Student> students = new ArrayList<>();
+        students = new ArrayList<>();
         try {
             Scanner s = new Scanner(new File("src/students.csv"));
             while (s.hasNextLine()) {
@@ -40,11 +36,11 @@ public class Student {
         return students;
     }
 
-    public int getStudentID() {
-        return studentID;
-    }
-
     public static ArrayList<Student> getStudents() {
         return students;
+    }
+
+    public int getStudentID() {
+        return studentID;
     }
 }
