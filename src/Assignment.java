@@ -15,6 +15,19 @@ public class Assignment {
             System.out.println(a);
         }
     }
+
+    public static ArrayList<Integer> getAssignmentsByClass(int classID) {
+        if (assignments == null) {
+            generateAssignments();
+        }
+        ArrayList<Integer> out = new ArrayList<>();
+        for (int i = 0; i < assignments.size(); i++) {
+           if (assignments.get(i).getClassID() == classID) {
+               out.add(assignments.get(i).getAssignmentID());
+           }
+        }
+        return out;
+    }
     public Assignment(int classID, String name, String type) {
         this.classID = classID;
         this.name = name;
@@ -34,20 +47,17 @@ public class Assignment {
     }
 
     public static void generateAssignments() {
-        if (!generated) {
-            ClassA.generateClasses();
-            ArrayList<ClassA> classList = ClassA.getClassesList();
-            assignments = new ArrayList<>();
-            for (ClassA c : classList) {
-                int cid = c.getClassID();
-                for (int i = 1; i <= 12; i++) {
-                    assignments.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
-                }
-                for (int i = 1; i <= 3; i++) {
-                    assignments.add(new Assignment(cid,"Major Assessment " + i, "Major Assessment"));
-                }
+        ClassA.generateClasses();
+        ArrayList<ClassA> classList = ClassA.getClassesList();
+        assignments = new ArrayList<>();
+        for (ClassA c : classList) {
+            int cid = c.getClassID();
+            for (int i = 1; i <= 12; i++) {
+                assignments.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
             }
-            generated = true;
+            for (int i = 1; i <= 3; i++) {
+                assignments.add(new Assignment(cid,"Major Assessment " + i, "Major Assessment"));
+            }
         }
     }
     @Override
@@ -63,5 +73,10 @@ public class Assignment {
         return classID;
     }
 
-
+    public static ArrayList<Assignment> getAssignments() {
+        if (assignments == null) {
+            generateAssignments();
+        }
+        return assignments;
+    }
 }

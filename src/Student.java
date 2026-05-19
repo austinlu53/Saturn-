@@ -43,4 +43,8 @@ public class Student {
     public int getStudentID() {
         return studentID;
     }
+
+    public static ArrayList<Student> getStudents() {
+        return students;
+    }
 }
