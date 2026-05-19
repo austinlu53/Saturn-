@@ -8,16 +8,16 @@ public class ClassA {
     private int period;
     private int roomID;
     private int classID = 0;
-    private static int classIDCounter = 0;
-    private static ArrayList<ClassA> classesList;
-    public static boolean generated = false;
+    private static int CLASS_ID_COUNTER = 0;
+    private static ArrayList<ClassA> CLASSES_LIST;
+    public static boolean GENERATED = false;
 
     public ClassA(int courseID, int period, int roomID) {
         this.courseID = courseID;
         this.period = period;
         this.roomID = roomID;
-        classIDCounter++;
-        classID = classIDCounter;
+        CLASS_ID_COUNTER++;
+        classID = CLASS_ID_COUNTER;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ClassA {
         return "INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES (" + courseID + "," + period + "," + roomID + ");";
     }
     public static void generateClasses() {
-        if (!generated) {
+        if (!GENERATED) {
             ArrayList<ClassA> classList = new ArrayList<>();
             boolean[][] classes = new boolean[720][10];
             int count = 0;
@@ -51,7 +51,7 @@ public class ClassA {
             } catch (FileNotFoundException e) {
                 System.out.println(e);
             }
-            classesList = classList;
+            CLASSES_LIST = classList;
         }
     }
 
@@ -60,7 +60,7 @@ public class ClassA {
     }
 
     public static ArrayList<ClassA> getClassesList() {
-        return classesList;
+        return CLASSES_LIST;
     }
 
     public int getPeriod() {

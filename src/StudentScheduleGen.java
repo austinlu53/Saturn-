@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class StudentScheduleGen {
     public static ArrayList<StudentClasses> returnSchedules() {

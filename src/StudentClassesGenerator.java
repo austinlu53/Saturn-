@@ -1,11 +1,5 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.lang.Class;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.io.BufferedReader;
 
 public class StudentClassesGenerator {
     public static ArrayList<StudentClasses> generateSchedules() {
@@ -33,11 +27,6 @@ public class StudentClassesGenerator {
         Periods.add(Period9);
         Periods.add(Period10);
 
-
-
-
-        String classID = "";
-        String period = "";
         ClassA.generateClasses();
         ArrayList<ClassA> classes = ClassA.getClassesList();
         for(int i =0; i<classes.toArray().length-1;i++){
@@ -73,23 +62,12 @@ public class StudentClassesGenerator {
                 Periods.get(9).add(classes.get(i).getClassID());
             }
         }
-         /* System.out.println("Period1: " + Period1);
-        System.out.println("Period2: " + Period2);
-        System.out.println("Period3: " + Period3);
-        System.out.println("Period4: " + Period4);
-        System.out.println("Period5: " + Period5);
-        System.out.println("Period6: " + Period6);
-        System.out.println("Period7: " + Period7);
-        System.out.println("Period8: " + Period8);
-        System.out.println("Period9: " + Period9);
-        System.out.println("Period10: " + Period10); */
         for(int j = 1;j<=5000;j++){
             for(int k = 0;k<=9;k++){
                 int randomIdx = (int) (Math.random()*(Periods.get(k).size()));
                 int randomClassID = (int) Periods.get(k).get(randomIdx);
                 StudentClasses Student = new StudentClasses(j,randomClassID);
                 output.add(Student);
-                // System.out.println(Student);
             }
         }
         return output;

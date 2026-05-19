@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class Room {
-    private static int roomIDCounter = 0;
+    private static int ROOM_ID_COUNTER = 0;
     private static final char[] DIRECTIONS = new char[]{'N','S','E','W'};
     private final char floor;
     private final char direction;
@@ -10,8 +10,8 @@ public class Room {
         this.floor = (floor == 0)? 'B' : (char) (floor + '0');
         this.direction = DIRECTIONS[direction];
         this.num = num;
-        roomIDCounter++;
-        roomID = roomIDCounter;
+        ROOM_ID_COUNTER++;
+        roomID = ROOM_ID_COUNTER;
     }
 
     @Override

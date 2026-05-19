@@ -1,22 +1,21 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Student {
     private String firstName;
     private String lastName;
-    private static int studentIDCounter = 0;
+    private static int STUDENT_ID_COUNTER = 0;
     private int studentID;
-    public static ArrayList<Student> students = generateStudents();
+    public static ArrayList<Student> STUDENTS = generateStudents();
 
 
     public Student(String firstName,String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-        studentIDCounter++;
-        studentID=studentIDCounter;
+        STUDENT_ID_COUNTER++;
+        studentID= STUDENT_ID_COUNTER;
         for (int i = 0; i < 10; i++) {
             new StudentGenerator();
         }
@@ -45,6 +44,6 @@ public class Student {
     }
 
     public static ArrayList<Student> getStudents() {
-        return students;
+        return STUDENTS;
     }
 }
