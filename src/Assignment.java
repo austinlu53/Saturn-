@@ -24,11 +24,15 @@ public class Assignment {
         assignmentID = assignmentIDCounter;
     }
 
-    public static ArrayList<Assignment> getAssignmentsByClass(int id) {
-        ArrayList<Assignment> out = new ArrayList<>();
+    public static ArrayList<Integer> getAssignmentsByClass(int id) {
+        if (!generated) {
+            generateAssignments();
+            generated = true;
+        }
+        ArrayList<Integer> out = new ArrayList<>();
         for (Assignment assignment : assignments) {
             if (assignment.getClassID() == id) {
-                out.add(assignment);
+                out.add(assignment.getClassID());
             }
         }
         return out;
