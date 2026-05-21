@@ -16,7 +16,7 @@ public class StudentClasses {
 
     public static void generateStudentClasses() {
         studentClasses = new ArrayList<>();
-        ArrayList<ArrayList> periods = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> periods = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             periods.add(new ArrayList<Integer>());
         }
