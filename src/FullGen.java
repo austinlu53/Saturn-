@@ -1,4 +1,4 @@
-public class fullGen {
+public class FullGen {
     public static void main(String[] args) {
         Student.generateStudents();
         Teacher.generateTeachers();
