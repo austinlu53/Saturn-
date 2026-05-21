@@ -4,21 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
+    private static int studentIDCounter = 0;
+    private static ArrayList<Student> students;
     private String firstName;
     private String lastName;
-    private static int STUDENT_ID_COUNTER = 0;
     private int studentID;
-    public static ArrayList<Student> STUDENTS = generateStudents();
 
 
-    public Student(String firstName,String lastName){
+    public Student(String firstName,String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        STUDENT_ID_COUNTER++;
-        studentID= STUDENT_ID_COUNTER;
-        for (int i = 0; i < 10; i++) {
-            new StudentGenerator();
-        }
+        studentIDCounter++;
+        studentID= studentIDCounter;
     }
 
     public String toString() {
@@ -26,7 +23,7 @@ public class Student {
                 "VALUES (\""+firstName+"\",\""+lastName+"\");");
     }
     public static ArrayList<Student> generateStudents() {
-        ArrayList<Student> students = new ArrayList<>();
+        students = new ArrayList<>();
         try {
             Scanner s = new Scanner(new File("src/students.csv"));
             while (s.hasNextLine()) {
@@ -39,11 +36,11 @@ public class Student {
         return students;
     }
 
-    public int getStudentID() {
-        return studentID;
+    public static ArrayList<Student> getStudents() {
+        return students;
     }
 
-    public static ArrayList<Student> getStudents() {
-        return STUDENTS;
+    public int getStudentID() {
+        return studentID;
     }
 }

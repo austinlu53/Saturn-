@@ -1,20 +1,13 @@
 import java.util.ArrayList;
 
 public class Assignment {
+    private static ArrayList<Assignment> assignments;
+    private static boolean generated = false;
     private static int assignmentIDCounter = 0;
     private int assignmentID;
     private int classID;
     private String name;
     private String type;
-    private static ArrayList<Assignment> ASSIGNMENTS;
-    private static boolean GENERATED = false;
-
-    public static void main(String[] args) {
-        generateAssignments();
-        for (Assignment a : ASSIGNMENTS) {
-            System.out.println(a);
-        }
-    }
 
     public Assignment(int classID, String name, String type) {
         this.classID = classID;
@@ -26,7 +19,7 @@ public class Assignment {
 
     public static ArrayList<Integer> getAssignmentsByClass(int id) {
         ArrayList<Integer> out = new ArrayList<>();
-        for (Assignment assignment : ASSIGNMENTS) {
+    for (Assignment assignment : assignments) {
             if (assignment.getClassID() == id) {
                 out.add(assignment.getAssignmentID());
             }
@@ -35,20 +28,20 @@ public class Assignment {
     }
 
     public static void generateAssignments() {
-        if (!GENERATED) {
+        if (!generated) {
             ClassA.generateClasses();
-            ArrayList<ClassA> classList = ClassA.getClassesList();
-            ASSIGNMENTS = new ArrayList<>();
+            ArrayList<ClassA> classList = ClassA.getClasses();
+            assignments = new ArrayList<>();
             for (ClassA c : classList) {
                 int cid = c.getClassID();
                 for (int i = 1; i <= 12; i++) {
-                    ASSIGNMENTS.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
+                    assignments.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
                 }
                 for (int i = 1; i <= 3; i++) {
-                    ASSIGNMENTS.add(new Assignment(cid,"Major Assessment " + i, "Major Assessment"));
+                    assignments.add(new Assignment(cid,"Major Assessment " + i, "Major Assessment"));
                 }
             }
-            GENERATED = true;
+            generated = true;
         }
     }
     @Override
@@ -62,12 +55,5 @@ public class Assignment {
 
     public int getClassID() {
         return classID;
-    }
-
-    public static ArrayList<Assignment> getASSIGNMENTS() {
-        if (ASSIGNMENTS == null) {
-            generateAssignments();
-        }
-        return ASSIGNMENTS;
     }
 }

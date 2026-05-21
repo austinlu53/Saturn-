@@ -1,33 +1,32 @@
 import java.util.ArrayList;
 
 public class Grade {
+    private static ArrayList<Grade> grades;
     private int studentID;
     private int assignmentID;
     private int grade;
-    private static ArrayList<Grade> GRADES;
 
     public Grade(int studentID, int assignmentID) {
         this.studentID = studentID;
         this.assignmentID = assignmentID;
-        grade = (int) (Math.random() * 75) + 1;
+        grade = (int) (Math.random() * 26) + 75;
     }
 
     public String toString() {
         return "INSERT INTO Grades (AssignmentID,StudentID,Grade) VALUES (" + assignmentID + "," + studentID + "," + grade + ");";
     }
-
     public static void generateGrades() {
         Assignment.generateAssignments();
-        GRADES = new ArrayList<>();
-        for (StudentClasses period : StudentScheduleGen.returnSchedules()) {
+        grades = new ArrayList<>();
+        for (StudentClasses period : StudentClasses.getStudentClasses()) {
             ArrayList<Integer> assignments = Assignment.getAssignmentsByClass(period.getClassID());
-            for (int m : assignments) {
-                GRADES.add(new Grade(period.getStudentID(), m));
+            for (int a : assignments) {
+                grades.add(new Grade(period.getStudentID(), a));
             }
         }
     }
 
-    public static ArrayList<Grade> getGradesList() {
-        return GRADES;
+    public static ArrayList<Grade> getGrades() {
+        return grades;
     }
 }
