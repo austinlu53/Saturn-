@@ -29,10 +29,11 @@ public class CourseOffering {
             ArrayList<CourseOffering> classList = new ArrayList<>();
             boolean[][] classes = new boolean[720][10];
             try {
-                File myFile = new File("src/CourseID");
+                File myFile = new File("src/CourseList.csv");
                 Scanner reader = new Scanner(myFile);
+                int data = 0;
                 while (reader.hasNextLine()) {
-                    int data = reader.nextInt();
+                    data++;
                     for (int i = 0; i < (int) (Math.random() * 5) + 1; i++) {
                         int ClassID = (int) (Math.random()*720) + 1;
                         int PeriodNum = (int) (Math.random()*10) + 1;
@@ -43,7 +44,7 @@ public class CourseOffering {
                         classList.add(new CourseOffering(data,PeriodNum,ClassID));
                         classes[ClassID - 1][PeriodNum - 1] = true;
                     }
-
+                    reader.nextLine();
                 }
                 reader.close();
             } catch (FileNotFoundException e) {
