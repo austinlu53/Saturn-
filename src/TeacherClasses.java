@@ -12,7 +12,7 @@ public class TeacherClasses {
 
     @Override
     public String toString() {
-        return "INSERT INTO TeacherClasses (TeacherID,ClassID) VALUES (" + teacherID + "," + classID + ");";
+        return "(" + teacherID + "," + classID + ")";
     }
 
     public static void generateTeacherClasses() {
@@ -32,6 +32,12 @@ public class TeacherClasses {
             }
             usedTeachers.clear();
         }
+    }
+
+    public static void printTeacherClasses() {
+        System.out.println("INSERT INTO TeacherClasses (TeacherID,ClassID) VALUES ");
+        for (int i = 0; i < teacherClasses.size()-1; i++) System.out.println(teacherClasses.get(i) + ", ");
+        System.out.println(teacherClasses.getLast() + ";");
     }
 
     public static ArrayList<TeacherClasses> getTeacherClasses() {

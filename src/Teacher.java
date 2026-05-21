@@ -21,7 +21,7 @@ public class Teacher {
     }
 
     public String toString() {
-        return "INSERT INTO Teachers (TeacherFirstName, TeacherLastName, DepartmentID) VALUES (\"" + firstName + "\", \"" + lastName + "\", " + departmentID + ");";
+        return "(\"" + firstName + "\", \"" + lastName + "\", " + departmentID + ")";
     }
 
     public static void generateTeachers()  {
@@ -37,6 +37,12 @@ public class Teacher {
         } catch (FileNotFoundException e) {
             System.out.println("Incorrect file path!");
         }
+    }
+
+    public static void printTeachers() {
+        System.out.println("INSERT INTO Teachers (TeacherFirstName, TeacherLastName, DepartmentID) VALUES ");
+        for (int i = 0; i < teachers.size()-1; i++) System.out.println(teachers.get(i) + ", ");
+        System.out.println(teachers.getLast() + ";");
     }
 
     public static ArrayList<Teacher> getTeachers() {

@@ -17,7 +17,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return "INSERT INTO Rooms (RoomName) VALUES (\"" + floor + direction + num + "\");";
+        return "(\"" + floor + direction + num + "\")";
     }
 
     public static void generateRooms() {
@@ -29,6 +29,12 @@ public class Room {
                 }
             }
         }
+    }
+
+    public static void printRooms() {
+        System.out.println("INSERT INTO Rooms (RoomName) VALUES ");
+        for (int i = 0; i < rooms.size()-1; i++) System.out.println(rooms.get(i) + ", ");
+        System.out.println(rooms.getLast() + ";");
     }
     public static ArrayList<Room> getRooms() {
         return rooms;

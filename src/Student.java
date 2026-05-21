@@ -19,8 +19,7 @@ public class Student {
     }
 
     public String toString() {
-        return ("INSERT INTO Students (StudentFirstName,StudentLastName) " +
-                "VALUES (\""+firstName+"\",\""+lastName+"\");");
+        return ("(\""+firstName+"\",\""+lastName+"\")");
     }
     public static ArrayList<Student> generateStudents() {
         students = new ArrayList<>();
@@ -34,6 +33,12 @@ public class Student {
             System.out.println("Incorrect file path!");
         }
         return students;
+    }
+
+    public static void printStudents() {
+        System.out.println("INSERT INTO Students (StudentFirstName,StudentLastName) VALUES ");
+        for (int i = 0; i < students.size()-1; i++) System.out.println(students.get(i) + ", ");
+        System.out.println(students.getLast() + ";");
     }
 
     public static ArrayList<Student> getStudents() {

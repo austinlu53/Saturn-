@@ -22,7 +22,7 @@ public class CourseOffering {
 
     @Override
     public String toString() {
-        return "INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES (" + courseID + "," + period + "," + roomID + ");";
+        return "(" + courseID + "," + period + "," + roomID + ")";
     }
     public static void generateClasses() {
         if (!generated) {
@@ -53,6 +53,11 @@ public class CourseOffering {
             CourseOffering.classes = classList;
             generated = true;
         }
+    }
+    public static void printClasses() {
+        System.out.println("INSERT INTO Classes (CourseID,PeriodNumber,RoomID) VALUES ");
+        for (int i = 0; i < classes.size()-1; i++) System.out.println(classes.get(i) + ", ");
+        System.out.println(classes.getLast() + ";");
     }
 
     public static ArrayList<CourseOffering> getClasses() {

@@ -46,7 +46,7 @@ public class Assignment {
     }
     @Override
     public String toString() {
-        return "INSERT INTO Assignments (ClassID, AssignmentName, AssignmentType) VALUES (" + classID + ", \"" + name + "\", \"" + type + "\");";
+        return "(" + classID + ", \"" + name + "\", \"" + type + "\")";
     }
 
     public int getAssignmentID() {
@@ -59,5 +59,11 @@ public class Assignment {
 
     public static ArrayList<Assignment> getAssignments() {
         return assignments;
+    }
+
+    public static void printAssignments() {
+        System.out.println("INSERT INTO Assignments (ClassID, AssignmentName, AssignmentType) VALUES ");
+        for (int i = 0; i < assignments.size()-1; i++) System.out.println(assignments.get(i) + ", ");
+        System.out.println(assignments.getLast() + ";");
     }
 }

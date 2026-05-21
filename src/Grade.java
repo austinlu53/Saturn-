@@ -13,7 +13,7 @@ public class Grade {
     }
 
     public String toString() {
-        return "(" + assignmentID + "," + studentID + "," + grade + "),";
+        return "(" + assignmentID + "," + studentID + "," + grade + ")";
     }
     public static void generateGrades() {
         Assignment.generateAssignments();
@@ -24,6 +24,15 @@ public class Grade {
                 grades.add(new Grade(period.getStudentID(), a));
             }
         }
+    }
+    public static void printGrades() {
+        System.out.println("INSERT INTO Grades (AssignmentID,StudentID,Grade) VALUES ");
+        for (int i = 0; i < grades.size()-1; i++) System.out.println(grades.get(i) + ", ");
+        System.out.println(grades.getLast() + ";");
+    }
+
+    public int getAssignmentID() {
+        return assignmentID;
     }
 
     public static ArrayList<Grade> getGrades() {

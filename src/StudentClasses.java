@@ -11,14 +11,14 @@ public class StudentClasses {
     }
 
     public String toString() {
-        return "INSERT INTO StudentClasses (StudentID,ClassID) VALUES (" + studentID + "," + classID + ");";
+        return "(" + studentID + "," + classID + ")";
     }
 
     public static void generateStudentClasses() {
         studentClasses = new ArrayList<>();
         ArrayList<ArrayList<Integer>> periods = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            periods.add(new ArrayList<Integer>());
+            periods.add(new ArrayList<>());
         }
         CourseOffering.generateClasses();
         ArrayList<CourseOffering> classes = CourseOffering.getClasses();
@@ -63,6 +63,12 @@ public class StudentClasses {
                 studentClasses.add(Student);
             }
         }
+    }
+
+    public static void printStudentClasses() {
+        System.out.println("INSERT INTO StudentClasses (StudentID,ClassID) VALUES ");
+        for (int i = 0; i < studentClasses.size()-1; i++) System.out.println(studentClasses.get(i) + ", ");
+        System.out.println(studentClasses.getLast() + ";");
     }
 
     public static ArrayList<StudentClasses> getStudentClasses() {
