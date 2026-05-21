@@ -15,7 +15,7 @@ public class TeacherClasses {
         return "INSERT INTO TeacherClasses (TeacherID,ClassID) VALUES (" + teacherID + "," + classID + ");";
     }
 
-    public static ArrayList<TeacherClasses> generateTeacherClasses() {
+    public static void generateTeacherClasses() {
         teacherClasses = new ArrayList<>();
         ArrayList<Integer> usedTeachers = new ArrayList<>();
         for (int j = 1; j <= 10; j++) {
@@ -32,7 +32,6 @@ public class TeacherClasses {
             }
             usedTeachers.clear();
         }
-        return teacherClasses;
     }
 
     public static ArrayList<TeacherClasses> getTeacherClasses() {
