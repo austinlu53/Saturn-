@@ -20,8 +20,8 @@ public class StudentClasses {
         for (int i = 0; i < 10; i++) {
             periods.add(new ArrayList<Integer>());
         }
-        ClassA.generateClasses();
-        ArrayList<ClassA> classes = ClassA.getClasses();
+        CourseOffering.generateClasses();
+        ArrayList<CourseOffering> classes = CourseOffering.getClasses();
         for(int i =0; i<classes.toArray().length-1;i++) {
             int classPeriod = classes.get(i).getPeriod();
             if(classPeriod == 1) {

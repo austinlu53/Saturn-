@@ -1,22 +1,27 @@
-import java.util.ArrayList;
-
 public class fullGen {
     public static void main(String[] args) {
         Student.generateStudents();
         Teacher.generateTeachers();
         Room.generateRooms();
-        ClassA.generateClasses();
+        CourseOffering.generateClasses();
         StudentClasses.generateStudentClasses();
         TeacherClasses.generateTeacherClasses();
         Assignment.generateAssignments();
         Grade.generateGrades();
-        System.out.println(Student.getStudents());
-        System.out.println(Teacher.getTeachers());
-        System.out.println(Room.getRooms());
-        System.out.println(ClassA.getClasses());
-        System.out.println(StudentClasses.getStudentClasses());
-        System.out.println(TeacherClasses.getTeacherClasses());
-        for (ClassA c : ClassA.getClasses()) System.out.println(Assignment.getAssignmentsByClass(c.getClassID()));
-        System.out.println(Grade.getGrades());
+        for (Student student : Student.getStudents()) {
+            System.out.println(student);
+        }
+        for (Teacher teacher : Teacher.getTeachers()) {
+            System.out.println(teacher);
+        }
+        for (CourseOffering courseOffering : CourseOffering.getClasses()) {
+            System.out.println(courseOffering);
+        }
+        for (Assignment assignment : Assignment.getAssignments()) {
+            System.out.println(assignment);
+        }
+        for (Grade grade : Grade.getGrades()) {
+            System.out.println(grade);
+        }
     }
 }

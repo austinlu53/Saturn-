@@ -29,10 +29,10 @@ public class Assignment {
 
     public static void generateAssignments() {
         if (!generated) {
-            ClassA.generateClasses();
-            ArrayList<ClassA> classList = ClassA.getClasses();
+            CourseOffering.generateClasses();
+            ArrayList<CourseOffering> classList = CourseOffering.getClasses();
             assignments = new ArrayList<>();
-            for (ClassA c : classList) {
+            for (CourseOffering c : classList) {
                 int cid = c.getClassID();
                 for (int i = 1; i <= 12; i++) {
                     assignments.add(new Assignment(cid,"Minor Assessment " + i, "Minor Assessment"));
@@ -55,5 +55,9 @@ public class Assignment {
 
     public int getClassID() {
         return classID;
+    }
+
+    public static ArrayList<Assignment> getAssignments() {
+        return assignments;
     }
 }

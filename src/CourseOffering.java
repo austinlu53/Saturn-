@@ -3,16 +3,16 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ClassA {
+public class CourseOffering {
     private static int classIDCounter = 0;
     private static boolean generated = false;
-    private static ArrayList<ClassA> classes;
+    private static ArrayList<CourseOffering> classes;
     private int courseID;
     private int period;
     private int roomID;
     private int classID;
 
-    public ClassA(int courseID, int period, int roomID) {
+    public CourseOffering(int courseID, int period, int roomID) {
         this.courseID = courseID;
         this.period = period;
         this.roomID = roomID;
@@ -26,7 +26,7 @@ public class ClassA {
     }
     public static void generateClasses() {
         if (!generated) {
-            ArrayList<ClassA> classList = new ArrayList<>();
+            ArrayList<CourseOffering> classList = new ArrayList<>();
             boolean[][] classes = new boolean[720][10];
             try {
                 File myFile = new File("src/CourseID");
@@ -40,7 +40,7 @@ public class ClassA {
                             ClassID = (int) (Math.random()*720) + 1;
                             PeriodNum = (int) (Math.random()*10) + 1;
                         }
-                        classList.add(new ClassA(data,PeriodNum,ClassID));
+                        classList.add(new CourseOffering(data,PeriodNum,ClassID));
                         classes[ClassID - 1][PeriodNum - 1] = true;
                     }
 
@@ -49,12 +49,12 @@ public class ClassA {
             } catch (FileNotFoundException e) {
                 System.out.println(e);
             }
-            ClassA.classes = classList;
+            CourseOffering.classes = classList;
             generated = true;
         }
     }
 
-    public static ArrayList<ClassA> getClasses() {
+    public static ArrayList<CourseOffering> getClasses() {
         return classes;
     }
 
