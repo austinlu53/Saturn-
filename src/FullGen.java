@@ -8,6 +8,7 @@ public class FullGen {
         TeacherClasses.generateTeacherClasses();
         Assignment.generateAssignments();
         Grade.generateGrades();
+        /*
         for (Student student : Student.getStudents()) {
             System.out.println(student);
         }
@@ -19,9 +20,11 @@ public class FullGen {
         }
         for (Assignment assignment : Assignment.getAssignments()) {
             System.out.println(assignment);
-        }
+        }*/
+        String gradeInsert = "INSERT INTO Grades (AssignmentID,StudentID,Grade) VALUES ";
+        System.out.println(gradeInsert);
         for (Grade grade : Grade.getGrades()) {
-            System.out.println(grade);
+            System.out.print(grade);
         }
     }
 }

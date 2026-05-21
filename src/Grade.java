@@ -13,7 +13,7 @@ public class Grade {
     }
 
     public String toString() {
-        return "INSERT INTO Grades (AssignmentID,StudentID,Grade) VALUES (" + assignmentID + "," + studentID + "," + grade + ");";
+        return "(" + assignmentID + "," + studentID + "," + grade + "),";
     }
     public static void generateGrades() {
         Assignment.generateAssignments();
