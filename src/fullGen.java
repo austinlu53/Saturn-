@@ -14,6 +14,9 @@ public class fullGen {
         System.out.println(Teacher.getTeachers());
         System.out.println(Room.getRooms());
         System.out.println(ClassA.getClasses());
-        System.out.println();
+        System.out.println(StudentClasses.getStudentClasses());
+        System.out.println(TeacherClasses.getTeacherClasses());
+        for (ClassA c : ClassA.getClasses()) System.out.println(Assignment.getAssignmentsByClass(c.getClassID()));
+        System.out.println(Grade.getGrades());
     }
 }
